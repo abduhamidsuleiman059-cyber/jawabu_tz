@@ -1,0 +1,10 @@
+/* Icons za kisasa (SVG) - inapakiwa baada ya home.css */
+[data-icon] svg,.ric svg,.nv i svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;display:block}
+.nv i{display:grid;place-items:center;font-size:1.4rem}
+.logo-mark{color:#F59E0B;font-size:18px}
+.cat .ico{width:46px;height:46px;border-radius:14px;background:#fff;display:grid;place-items:center;font-size:24px;margin-bottom:8px;box-shadow:0 4px 12px rgba(15,23,42,.08)}
+.c-pesa .ico{color:#2563EB}.c-afya .ico{color:#DB2777}.c-elimu .ico{color:#D97706}.c-biz .ico{color:#16A34A}
+.qlist .ic{font-size:20px}
+.qlist a:nth-child(1) .ic{color:#2563EB}.qlist a:nth-child(2) .ic{color:#DB2777}.qlist a:nth-child(3) .ic{color:#D97706}.qlist a:nth-child(4) .ic{color:#16A34A}
+.cta-ic{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:22px;color:#fff}
+.ric{flex:none;width:34px;height:34px;border-radius:10px;background:var(--p-soft);color:var(--p);display:grid;place-items:center;font-size:18px}

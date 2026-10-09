@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jawabu TZ - Kikokotoo na Majibu ya Kila Siku Tanzania</title>
+<meta name="description" content="Jawabu TZ: kikokotoo cha PAYE, NSSF, HESLB, BMI, GPA na majibu ya maswali ya kila siku kwa Watanzania.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/icons.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="favicon.png">
+</head>
+<body class="home" data-root="">
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="logo-mark" style="background:linear-gradient(135deg,#4F46E5,#22D3EE);color:#fff;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;box-shadow:0 4px 12px rgba(34,211,238,.35)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>Jawabu<span class="logo-tz">TZ</span></a>
+    <nav class="tnav" aria-label="Menyu ya juu">
+      <a href="index.html" class="on">Nyumbani</a>
+      <a href="#maswali">Maswali</a>
+      <a href="#" class="soon">Jamii</a>
+      <a href="#makundi">Miongozo</a>
+      <a href="about.html">Kuhusu</a>
+    </nav>
+    <a href="contact.html" class="top-link">Mawasiliano</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1>Unataka kukokotoa <b>nini leo?</b></h1>
+        <p>Pata majibu ya haraka, sahihi na rahisi kwa maswali yako ya kila siku: pesa, elimu, afya, biashara na mengine mengi.</p>
+        <div class="search">
+          <input id="q" type="search" placeholder="Mfano: PAYE, BMI, mkopo..." autocomplete="off" aria-label="Tafuta kikokotoo">
+          <button type="button" class="sbtn">Tafuta</button>
+          <div id="results" class="results" hidden></div>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">
+        <span class="script">Jibu lipo hapa!</span>
+        <img src="assets/hero-laptop.png" alt="" class="art-img" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'">
+        <svg class="art-svg" viewBox="0 0 360 230">
+          <defs><linearGradient id="sc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+          <ellipse cx="180" cy="212" rx="160" ry="10" fill="#000" opacity=".28"/>
+          <rect x="64" y="14" width="232" height="152" rx="12" fill="#0F172A" stroke="#CBD5E1" stroke-width="4"/>
+          <rect x="76" y="26" width="208" height="128" rx="6" fill="url(#sc)"/>
+          <rect x="90" y="40" width="72" height="8" rx="4" fill="#fff" opacity=".95"/>
+          <rect x="90" y="56" width="116" height="6" rx="3" fill="#fff" opacity=".55"/>
+          <rect x="92" y="96" width="44" height="46" rx="6" fill="#fff" opacity=".92"/>
+          <rect x="144" y="78" width="44" height="64" rx="6" fill="#fff" opacity=".78"/>
+          <rect x="196" y="106" width="44" height="36" rx="6" fill="#fff" opacity=".62"/>
+          <circle cx="252" cy="52" r="12" fill="#FDE68A"/>
+          <path d="M36 172h288l-24 30H60z" fill="#E2E8F0"/>
+          <rect x="146" y="178" width="68" height="7" rx="3.5" fill="#94A3B8"/>
+          <rect x="304" y="168" width="34" height="34" rx="8" fill="#fff"/>
+          <path d="M338 176h6a8 8 0 010 18h-6" fill="none" stroke="#fff" stroke-width="4"/>
+          <path d="M34 204c-8-28-2-46 14-58 6 24 2 44-14 58zM34 204c8-20 24-32 42-32-4 22-18 32-42 32z" fill="#22C55E"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="makundi">
+    <div class="sec-head"><h2 class="h2">Makundi</h2><a href="pesa/paye.html" class="more">Tazama yote →</a></div>
+    <div class="cats">
+      <a class="cat c-pesa" href="pesa/paye.html"><i class="ico" data-icon="calc"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></i><b>Hesabu</b><small>PAYE, mkopo, riba...</small><span class="go">→</span></a>
+      <a class="cat c-afya" href="afya/bmi.html"><i class="ico" data-icon="heart"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/><path d="M3.2 12h6.3l.5-1 2 4.5 2-7 1.5 3.5h5.3"/></svg></i><b>Afya</b><small>BMI, lishe, kalori...</small><span class="go">→</span></a>
+      <a class="cat c-elimu" href="elimu/gpa.html"><i class="ico" data-icon="cap"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></i><b>Elimu</b><small>GPA, alama, NECTA...</small><span class="go">→</span></a>
+      <a class="cat c-biz" href="biashara/faida.html"><i class="ico" data-icon="brief"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 13h20"/></svg></i><b>Biashara</b><small>Faida, VAT, bei...</small><span class="go">→</span></a>
+    </div>
+  </section>
+
+  <section class="block wrap" id="maswali">
+    <div class="sec-head"><h2 class="h2">Maswali ya Hivi Karibuni</h2><a href="pesa/paye.html" class="more">Tazama yote →</a></div>
+    <div class="qlist">
+      <a href="pesa/paye.html"><span class="ic" data-icon="calc"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></span><div><b>Jinsi ya kukokotoa PAYE Tanzania</b><small>Nina mshahara wa TSh 1,000,000, ni kiasi gani cha PAYE?</small></div><em class="tag t-pesa">Hesabu</em></a>
+      <a href="afya/bmi.html"><span class="ic" data-icon="heart"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/><path d="M3.2 12h6.3l.5-1 2 4.5 2-7 1.5 3.5h5.3"/></svg></span><div><b>BMI yangu ni kiasi gani?</b><small>Nina urefu wa 1.70m na uzito wa 68kg.</small></div><em class="tag t-afya">Afya</em></a>
+      <a href="elimu/gpa.html"><span class="ic" data-icon="cap"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><div><b>Jinsi ya kukokotoa GPA ya chuo</b><small>Nataka kujua wastani wa alama zangu za semester.</small></div><em class="tag t-elimu">Elimu</em></a>
+      <a href="biashara/faida.html"><span class="ic" data-icon="brief"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 13h20"/></svg></span><div><b>Faida ya biashara yangu ni kiasi gani?</b><small>Nataka kujua faida baada ya gharama zote.</small></div><em class="tag t-biz">Biashara</em></a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <span class="cta-ic" data-icon="zap"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
+      <div><b>Jibu la haraka, maisha bora</b><small>Jawabu TZ - kila swali lina jibu.</small></div>
+      <a href="pesa/paye.html" class="cta-btn">Anza Sasa →</a>
+    </div>
+    <div class="ad" data-slot="home-top">Nafasi ya tangazo</div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-logo"><b>Jawabu</b> TZ</p>
+    <p class="foot-links"><a href="index.html">Nyumbani</a><a href="#maswali">Maswali</a><a href="#makundi">Miongozo</a><a href="about.html">Kuhusu</a><a href="contact.html">Mawasiliano</a><a href="privacy-policy.html">Faragha</a></p>
+    <p class="foot-copy">© 2026 Jawabu TZ. Haki zote zimehifadhiwa.</p>
+  </div>
+</footer>
+
+<nav id="bottom-nav" aria-label="Menyu kuu"></nav>
+
+<script src="js/icons.js"></script>
+<script src="js/tools-data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/search.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

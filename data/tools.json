@@ -1,0 +1,16 @@
+[
+{"name":"Kikokotoo cha PAYE","cat":"Pesa","url":"pesa/paye.html","icon":"💰","tags":"kodi mshahara tra"},
+{"name":"Kikokotoo cha NSSF","cat":"Pesa","url":"pesa/nssf.html","icon":"🏦","tags":"mfuko pensheni"},
+{"name":"Mkopo wa HESLB","cat":"Pesa","url":"pesa/heslb.html","icon":"🎓","tags":"bodi ya mikopo chuo"},
+{"name":"Kikokotoo cha Mkopo","cat":"Pesa","url":"pesa/mkopo.html","icon":"📈","tags":"riba marejesho loan"},
+{"name":"Kodi ya TRA","cat":"Pesa","url":"pesa/kodi.html","icon":"🧾","tags":"tra kodi biashara"},
+{"name":"BMI - Uzito na Urefu","cat":"Afya","url":"afya/bmi.html","icon":"⚖️","tags":"uzito mwili"},
+{"name":"Kalori za Kila Siku","cat":"Afya","url":"afya/kalori.html","icon":"🍽️","tags":"chakula lishe"},
+{"name":"Tarehe ya Kujifungua","cat":"Afya","url":"afya/kujifungua.html","icon":"🤱","tags":"mimba ujauzito"},
+{"name":"GPA ya Chuo","cat":"Elimu","url":"elimu/gpa.html","icon":"🎓","tags":"alama chuo wastani"},
+{"name":"Alama na Daraja","cat":"Elimu","url":"elimu/alama.html","icon":"📝","tags":"daraja matokeo"},
+{"name":"Matokeo ya NECTA","cat":"Elimu","url":"elimu/necta.html","icon":"📚","tags":"kidato darasa"},
+{"name":"Faida na Hasara","cat":"Biashara","url":"biashara/faida.html","icon":"🏪","tags":"mauzo gharama"},
+{"name":"Kikokotoo cha VAT","cat":"Biashara","url":"biashara/vat.html","icon":"🧮","tags":"kodi ongezeko thamani"},
+{"name":"Bei ya Kuuza","cat":"Biashara","url":"biashara/bei-ya-kuuza.html","icon":"🏷️","tags":"bei mtaji"}
+]

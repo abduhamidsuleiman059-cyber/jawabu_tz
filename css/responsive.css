@@ -1,0 +1,14 @@
+@media (min-width:700px){
+  .hero{padding:56px 0 40px}
+  .hero h1{font-size:2.6rem}
+  .search input{height:64px;font-size:1.1rem}
+  .results{top:70px}
+  .cats{grid-template-columns:repeat(4,1fr)}
+  .cat{min-height:140px}
+  .list{display:grid;grid-template-columns:1fr 1fr}
+  .list a{border-right:1px solid var(--line)}
+}
+@media (min-width:1000px){
+  #bottom-nav{bottom:14px;border-radius:22px;border:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
