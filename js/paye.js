@@ -33,7 +33,9 @@
       out    = document.getElementById('payeResult'),
       clearBtn = document.getElementById('clearBtn'),
       histList = document.getElementById('histList'),
-      histClear = document.getElementById('histClear');
+      histClear = document.getElementById('histClear'),
+      saveNote = document.getElementById('saveNote'),
+      noteDefault = saveNote ? saveNote.innerHTML : '';
 
   function num(v){ return parseInt(String(v).replace(/[^\d]/g,''), 10) || 0; }
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
@@ -93,6 +95,7 @@
       '<div class="more-links">' +
         '<a href="nssf.html?mshahara=' + g + '">Maelezo zaidi ya NSSF</a>' +
         '<a href="#viwango">Viwango vya PAYE</a>' +
+        (hist.length ? '<a href="#histCard" class="js-hist">Historia (' + hist.length + ')</a>' : '') +
       '</div>';
   }
 
@@ -122,17 +125,30 @@
   function renderHist(){
     histClear.disabled = !hist.length;
     if(!hist.length){
-      histList.innerHTML = '<li class="hist-empty">Bado hujahifadhi hesabu yoyote. Bonyeza <b>Kokotoa</b> kuhifadhi.</li>';
+      histList.innerHTML = '<li class="hist-empty">Bado hujahifadhi hesabu yoyote. Weka mshahara kisha bonyeza <b>Kokotoa</b>.</li>';
       return;
     }
     histList.innerHTML = hist.map(function(h, i){
       var r = calc(h.g, h.n, h.o);
       return '<li class="h-item">' +
-        '<button type="button" class="h-use" data-i="' + i + '">' +
-          '<span class="h-main"><b>TSh ' + fmt(h.g) + '</b><small>' + when(h.t) + (h.n ? ' · NSSF 10%' : ' · bila NSSF') + (h.o ? ' · makato ' + fmt(h.o) : '') + '</small></span>' +
-          '<span class="h-net"><small>Mkononi</small><b>TSh ' + fmt(r.net) + '</b></span>' +
-        '</button>' +
-        '<button type="button" class="h-del" data-i="' + i + '" aria-label="Futa hesabu hii">×</button>' +
+        '<div class="h-row">' +
+          '<button type="button" class="h-use" data-i="' + i + '" aria-expanded="false">' +
+            '<span class="h-main"><b>TSh ' + fmt(h.g) + '</b><small>' + when(h.t) + '</small></span>' +
+            '<span class="h-net"><small>Mkononi</small><b>TSh ' + fmt(r.net) + '</b></span>' +
+            '<span class="h-chev" aria-hidden="true"></span>' +
+          '</button>' +
+          '<button type="button" class="h-del" data-i="' + i + '" aria-label="Futa hesabu hii">×</button>' +
+        '</div>' +
+        '<div class="h-detail">' +
+          '<ul class="res-rows">' +
+            '<li><span>Mshahara ghafi</span><b>TSh ' + fmt(h.g) + '</b></li>' +
+            '<li><span>NSSF' + (h.n ? ' (10%)' : ' (haikukatwa)') + '</span><b>TSh ' + fmt(r.nssf) + '</b></li>' +
+            '<li><span>PAYE</span><b>TSh ' + fmt(r.paye) + '</b></li>' +
+            (h.o ? '<li><span>Makato mengine</span><b>TSh ' + fmt(h.o) + '</b></li>' : '') +
+            '<li><span>Unachochukua</span><b>TSh ' + fmt(r.net) + '</b></li>' +
+          '</ul>' +
+          '<button type="button" class="h-reuse" data-i="' + i + '">Tumia tena kwenye fomu</button>' +
+        '</div>' +
       '</li>';
     }).join('');
   }
@@ -145,12 +161,19 @@
   }
 
   histList.addEventListener('click', function(e){
-    var del = e.target.closest('.h-del'), use = e.target.closest('.h-use');
+    var del = e.target.closest('.h-del'),
+        use = e.target.closest('.h-use'),
+        re  = e.target.closest('.h-reuse');
     if(del){
       hist.splice(+del.getAttribute('data-i'), 1);
-      store(); renderHist();
+      store(); renderHist(); render();
+      if(!hist.length && saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; }
     } else if(use){
-      var h = hist[+use.getAttribute('data-i')];
+      var li = use.closest('.h-item');
+      var open = li.classList.toggle('open');
+      use.setAttribute('aria-expanded', open ? 'true' : 'false');
+    } else if(re){
+      var h = hist[+re.getAttribute('data-i')];
       if(!h) return;
       salary.value = fmt(h.g);
       other.value = h.o ? fmt(h.o) : '';
@@ -160,9 +183,27 @@
     }
   });
 
+  // "Tazama historia": nenda kwenye historia na ufungue hesabu ya kwanza
+  function showHistory(){
+    var card = document.getElementById('histCard');
+    if(!card) return;
+    card.scrollIntoView({behavior: 'smooth', block: 'start'});
+    var first = histList.querySelector('.h-item');
+    if(first){
+      first.classList.add('open');
+      first.querySelector('.h-use').setAttribute('aria-expanded', 'true');
+    }
+  }
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.js-hist')){ e.preventDefault(); showHistory(); }
+  });
+
   histClear.addEventListener('click', function(){
     if(!hist.length) return;
-    if(window.confirm('Futa historia yote ya hesabu?')){ hist = []; store(); renderHist(); }
+    if(window.confirm('Futa historia yote ya hesabu?')){
+      hist = []; store(); renderHist(); render();
+      if(saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; }
+    }
   });
 
   /* ---------- Fomu ---------- */
@@ -180,14 +221,19 @@
     e.preventDefault();
     var g = num(salary.value);
     if(!g){ salary.focus(); return; }
-    render();
     addHist(g, nssfOn.checked ? 1 : 0, num(other.value));
+    render();
+    if(saveNote){
+      saveNote.className = 'hint ok';
+      saveNote.innerHTML = '✓ Imehifadhiwa kwenye historia. <a href="#histCard" class="js-hist">Tazama historia (' + hist.length + ')</a>';
+    }
     out.scrollIntoView({behavior: 'smooth', block: 'start'});
   });
 
   clearBtn.addEventListener('click', function(){
     salary.value = ''; other.value = ''; nssfOn.checked = true;
     render(); salary.focus();
+    if(saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; }
   });
 
   // Kiungo cha moja kwa moja: paye.html?mshahara=800000 (&nssf=0 &makato=50000)
