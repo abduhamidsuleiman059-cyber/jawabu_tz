@@ -1,0 +1,33 @@
+/* Jawabu TZ - navbar ya kioo (glass) inayobaki juu wakati wa kuscroll */
+
+/* Kosa lililokuwa linazuia "sticky": overflow-x:hidden kwenye html na body.
+   "clip" inazuia ukurasa kuteleza kando bila kuvunja sticky. */
+html,body{overflow-x:clip}
+
+.top{
+  position:sticky;top:0;z-index:50;
+  margin-bottom:-57px;                 /* maudhui yanapita chini ya kioo */
+  background:rgba(11,18,53,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(180%);
+  backdrop-filter:blur(18px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,.14);
+  box-shadow:0 6px 24px rgba(2,6,23,.16);
+}
+
+/* hero ya home ianzie chini ya navbar */
+.hero{padding-top:calc(30px + 57px)}
+@media (min-width:800px){.hero{padding-top:calc(56px + 57px)}}
+
+/* menyu ya chini ya simu pia iwe kioo */
+#bottom-nav{
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(16px) saturate(170%);
+  backdrop-filter:blur(16px) saturate(170%);
+  border-top:1px solid rgba(255,255,255,.7);
+}
+
+/* kivinjari kisichoweza blur: tumia rangi imara */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .top{background:rgba(11,18,53,.96)}
+  #bottom-nav{background:rgba(255,255,255,.97)}
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kikokotoo cha PAYE Tanzania 2024/25 - Jawabu TZ</title>
+<meta name="description" content="Kokotoa PAYE, NSSF na mshahara wa kuchukua nyumbani kwa viwango vya TRA vya 2024/25. Weka mshahara wako upate jibu papo hapo.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/nav.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/icons.css">
+<link rel="stylesheet" href="../css/glass.css">
+<link rel="stylesheet" href="../css/calc.css">
+</head>
+<body data-root="../">
+
+<header class="top">
+  <div class="wrap">
+    <a href="../index.html" class="logo"><span class="logo-mark" style="background:linear-gradient(135deg,#4F46E5,#22D3EE);color:#fff;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;box-shadow:0 4px 12px rgba(34,211,238,.35)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>Jawabu<span class="logo-tz">TZ</span></a>
+    <nav class="tnav" aria-label="Menyu ya juu">
+      <a href="../index.html">Nyumbani</a>
+      <a href="../index.html#maswali">Maswali</a>
+      <a href="#" class="soon">Jamii</a>
+      <a href="../index.html#makundi">Miongozo</a>
+      <a href="../about.html">Kuhusu</a>
+    </nav>
+    <a href="../contact.html" class="top-link">Mawasiliano</a>
+  </div>
+</header>
+
+<main>
+  <section class="ph">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">Nyumbani</a> / Pesa / PAYE</p>
+      <h1>Kikokotoo cha PAYE Tanzania</h1>
+      <p>Jua kodi ya mshahara (PAYE), makato ya NSSF na kiasi utakachobaki nacho mkononi, kwa viwango vya TRA vya mwaka 2024/25.</p>
+    </div>
+  </section>
+
+  <section class="wrap calc-wrap">
+    <div class="calc-grid">
+      <form class="pcard" id="payeForm" novalidate>
+        <h2>Weka taarifa zako</h2>
+        <div class="fld">
+          <label for="salary">Mshahara ghafi wa kila mwezi</label>
+          <div class="inp"><span>TSh</span><input id="salary" type="text" inputmode="numeric" autocomplete="off" placeholder="Mfano: 800,000"></div>
+          <small>Mshahara kabla ya makato yoyote.</small>
+        </div>
+        <label class="chk" for="nssfOn">
+          <input id="nssfOn" type="checkbox" checked>
+          <span><b>Kata NSSF (10%)</b><small>Mchango wa mfanyakazi kwa mfuko wa pensheni.</small></span>
+        </label>
+        <div class="fld">
+          <label for="other">Makato mengine (si lazima)</label>
+          <div class="inp"><span>TSh</span><input id="other" type="text" inputmode="numeric" autocomplete="off" placeholder="Mfano: mkopo, bima"></div>
+        </div>
+        <button type="submit" class="btn-main">Kokotoa</button>
+      </form>
+
+      <div class="pcard" id="payeResult" aria-live="polite">
+        <div class="res-empty">Weka mshahara wako wa kila mwezi, jibu litaonekana hapa papo hapo.</div>
+      </div>
+    </div>
+
+    <div class="ad" data-slot="paye-top">Nafasi ya tangazo</div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 class="h2">Viwango vya PAYE kwa mwezi (2024/25)</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Mshahara wa mwezi (TSh)</th><th>Kodi (PAYE)</th></tr></thead>
+        <tbody>
+          <tr><td>0 hadi 270,000</td><td>Hakuna kodi</td></tr>
+          <tr><td>270,001 hadi 520,000</td><td>9% ya kinachozidi 270,000</td></tr>
+          <tr><td>520,001 hadi 760,000</td><td>22,500 + 20% ya kinachozidi 520,000</td></tr>
+          <tr><td>760,001 hadi 1,000,000</td><td>70,500 + 25% ya kinachozidi 760,000</td></tr>
+          <tr><td>Zaidi ya 1,000,000</td><td>130,500 + 30% ya kinachozidi 1,000,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 class="h2">Mfano: mshahara wa TSh 800,000</h2>
+    <p>Kodi inakokotolewa kwa hatua, kila sehemu ya mshahara kwa kiwango chake:</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Sehemu ya mshahara</th><th>Hesabu</th><th>Kodi</th></tr></thead>
+        <tbody>
+          <tr><td>0 hadi 270,000</td><td>270,000 × 0%</td><td>0</td></tr>
+          <tr><td>270,000 hadi 520,000</td><td>250,000 × 9%</td><td>22,500</td></tr>
+          <tr><td>520,000 hadi 760,000</td><td>240,000 × 20%</td><td>48,000</td></tr>
+          <tr><td>760,000 hadi 800,000</td><td>40,000 × 25%</td><td>10,000</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="2">Jumla ya PAYE</td><td>80,500</td></tr></tfoot>
+      </table>
+    </div>
+    <p style="margin-top:12px">NSSF ya 10% ni 80,000, kwa hiyo unachochukua nyumbani ni 800,000 − 80,000 − 80,500 = <b>639,500</b>.</p>
+    <div class="note"><b>Kumbuka:</b> matokeo ni makadirio. Kwa kiasi kamili, thibitisha na mwajiri wako au TRA.</div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 class="h2">Maswali yanayoulizwa mara nyingi</h2>
+    <details class="faq"><summary>PAYE ni nini?</summary><p>PAYE (Pay As You Earn) ni kodi ya mapato ya mshahara inayokatwa na mwajiri kila mwezi na kupelekwa TRA.</p></details>
+    <details class="faq"><summary>Nani halipi PAYE?</summary><p>Mshahara wa mwezi hadi TSh 270,000 haukatwi PAYE. Kodi inaanza kwa sehemu inayozidi kiasi hicho.</p></details>
+    <details class="faq"><summary>NSSF ni nini na hukatwa kiasi gani?</summary><p>NSSF ni Mfuko wa Taifa wa Hifadhi ya Jamii. Mfanyakazi huchangia 10% ya mshahara, na mwajiri huongeza mchango wake.</p></details>
+    <details class="faq"><summary>Kuna tofauti gani kati ya mshahara ghafi na wa kuchukua nyumbani?</summary><p>Mshahara ghafi ni kabla ya makato. Wa kuchukua nyumbani ni kinachobaki baada ya kutoa PAYE, NSSF na makato mengine kama mikopo.</p></details>
+    <details class="faq"><summary>Viwango hivi vinatumika kwa mwaka gani?</summary><p>Kikokotoo hiki kinatumia viwango vya mwaka wa kodi 2024/25. Viwango vikibadilika, tutasasisha ukurasa huu.</p></details>
+  </section>
+
+  <section class="wrap sec">
+    <h2 class="h2">Zana zinazohusiana</h2>
+    <div class="rel">
+      <a href="nssf.html">Kikokotoo cha NSSF</a>
+      <a href="heslb.html">Mkopo wa HESLB</a>
+      <a href="mkopo.html">Kikokotoo cha Mkopo</a>
+    </div>
+    <div class="ad" data-slot="paye-bottom">Nafasi ya tangazo</div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-logo"><b>Jawabu</b> TZ</p>
+    <p class="foot-links"><a href="../index.html">Nyumbani</a><a href="../index.html#maswali">Maswali</a><a href="../index.html#makundi">Miongozo</a><a href="../about.html">Kuhusu</a><a href="../contact.html">Mawasiliano</a><a href="../privacy-policy.html">Faragha</a></p>
+    <p class="foot-copy">© 2026 Jawabu TZ. Haki zote zimehifadhiwa.</p>
+  </div>
+</footer>
+
+<nav id="bottom-nav" aria-label="Menyu kuu"></nav>
+
+<script src="../js/icons.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/paye.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Jawabu TZ - kurasa za kikokotoo (PAYE na zinazofuata) */
+.ph{background:radial-gradient(700px 320px at 85% 0,rgba(124,58,237,.5),transparent 60%),linear-gradient(135deg,#0B1235 0%,#14206B 55%,#3B1E8F 100%);color:#fff;padding:calc(57px + 24px) 0 70px}
+.crumb{font-size:.8rem;color:#A5B4FC;margin-bottom:10px}
+.crumb a{color:#C7D2FE;font-weight:600}
+.ph h1{font-size:1.7rem;line-height:1.15;letter-spacing:-.4px;margin-bottom:8px}
+.ph p{color:#CBD5E1;max-width:580px}
+
+.calc-wrap{margin-top:-44px;position:relative;z-index:2}
+.calc-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 10px 30px rgba(15,23,42,.08);min-width:0}
+.pcard h2{font-size:1.05rem;margin-bottom:14px}
+
+.fld{margin-bottom:16px}
+.fld label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+.fld small{display:block;color:var(--mut);font-size:.78rem;margin-top:5px}
+.inp{display:flex;align-items:stretch;border:2px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.inp:focus-within{border-color:var(--p)}
+.inp span{padding:0 12px;color:var(--mut);font-weight:700;font-size:.82rem;background:#F1F5F9;display:grid;place-items:center}
+.inp input{flex:1;min-width:0;border:0;outline:0;height:52px;padding:0 12px;font-size:1.1rem;font-weight:600;background:transparent;color:var(--ink);font-family:inherit}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:14px;cursor:pointer;margin-bottom:16px}
+.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--p);flex:none}
+.chk b{display:block;font-size:.92rem}
+.chk small{color:var(--mut);font-size:.78rem}
+.btn-main{width:100%;height:52px;border-radius:14px;background:linear-gradient(90deg,#2563EB,#7C3AED);color:#fff;font-weight:700;font-size:1rem}
+.btn-main:active{transform:scale(.99)}
+
+#payeResult{scroll-margin-top:72px}
+.res-empty{color:var(--mut);text-align:center;padding:30px 8px}
+.res-main{background:linear-gradient(135deg,#EEF2FF,#E0E7FF);border-radius:16px;padding:16px;margin-bottom:14px}
+.res-main small{color:var(--mut);font-weight:600}
+.res-main strong{display:block;font-size:2rem;color:#3730A3;letter-spacing:-.5px;line-height:1.2;font-variant-numeric:tabular-nums}
+.bar{display:flex;height:12px;border-radius:99px;overflow:hidden;background:#E2E8F0;margin:0 0 6px}
+.bar i{display:block;height:100%}
+.res-rows{list-style:none}
+.res-rows li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.res-rows li:last-child{border-bottom:0}
+.res-rows b{font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px}
+.rate{color:var(--mut);font-size:.82rem;margin-top:10px}
+.warn{background:#FEE2E2;color:#991B1B;border-radius:12px;padding:10px 12px;font-size:.85rem;margin-bottom:12px}
+
+.sec{margin-top:30px}
+.sec p{color:#334155;margin-bottom:10px;max-width:760px}
+.tbl-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem;min-width:420px}
+.tbl th,.tbl td{padding:12px;text-align:left;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{background:#F8FAFC;font-size:.8rem;color:var(--mut)}
+.tbl tfoot td{font-weight:800;background:#EEF2FF}
+
+.faq{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+.faq summary{padding:14px 16px;font-weight:700;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--p);font-weight:800}
+.faq[open] summary::after{content:"\2212"}
+.faq p{padding:0 16px 14px;color:#334155;margin:0}
+
+.note{background:#FEF3C7;border:1px solid #FDE68A;border-radius:14px;padding:12px 14px;font-size:.85rem;color:#78350F;margin-top:16px}
+.rel{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rel a{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:700;font-size:.92rem}
+.rel a:hover{border-color:var(--p);color:var(--p)}
+
+@media (min-width:800px){
+  .ph{padding:calc(57px + 40px) 0 84px}
+  .ph h1{font-size:2.4rem}
+  .rel{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:900px){
+  .calc-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+}
