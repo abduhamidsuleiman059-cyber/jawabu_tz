@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="../css/icons.css">
 <link rel="stylesheet" href="../css/glass.css">
 <link rel="stylesheet" href="../css/calc.css">
+<link rel="stylesheet" href="../css/history.css">
 </head>
 <body data-root="../">
 
@@ -57,7 +58,11 @@
           <label for="other">Makato mengine (si lazima)</label>
           <div class="inp"><span>TSh</span><input id="other" type="text" inputmode="numeric" autocomplete="off" placeholder="Mfano: mkopo, bima"></div>
         </div>
-        <button type="submit" class="btn-main">Kokotoa</button>
+        <div class="btn-row">
+          <button type="submit" class="btn-main">Kokotoa</button>
+          <button type="button" class="btn-clear" id="clearBtn">Futa</button>
+        </div>
+        <p class="hint">Bonyeza <b>Kokotoa</b> ili kuhifadhi hesabu kwenye historia.</p>
       </form>
 
       <div class="pcard" id="payeResult" aria-live="polite">
@@ -65,10 +70,19 @@
       </div>
     </div>
 
+    <div class="pcard hist" id="histCard">
+      <div class="hist-head">
+        <h2>Historia ya hesabu</h2>
+        <button type="button" class="link-btn" id="histClear">Futa historia</button>
+      </div>
+      <ul class="hist-list" id="histList"></ul>
+      <p class="hist-note">Hesabu zako zimehifadhiwa kwenye kifaa chako tu. Hatuzituma popote.</p>
+    </div>
+
     <div class="ad" data-slot="paye-top">Nafasi ya tangazo</div>
   </section>
 
-  <section class="wrap sec">
+  <section class="wrap sec" id="viwango">
     <h2 class="h2">Viwango vya PAYE kwa mwezi (2024/25)</h2>
     <div class="tbl-wrap">
       <table class="tbl">
@@ -84,7 +98,7 @@
     </div>
   </section>
 
-  <section class="wrap sec">
+  <section class="wrap sec" id="mfano">
     <h2 class="h2">Mfano: mshahara wa TSh 800,000</h2>
     <p>Kodi inakokotolewa kwa hatua, kila sehemu ya mshahara kwa kiwango chake:</p>
     <div class="tbl-wrap">

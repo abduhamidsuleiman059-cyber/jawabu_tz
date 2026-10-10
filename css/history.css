@@ -1,0 +1,43 @@
+/* Jawabu TZ - vitufe vya kufuta, hatua za hesabu na historia ya kikokotoo */
+.btn-row{display:flex;gap:10px}
+.btn-row .btn-main{flex:1}
+.btn-clear{flex:none;padding:0 22px;height:52px;border-radius:14px;border:2px solid var(--line);background:#fff;font-weight:700;color:#475569;font-size:1rem}
+.btn-clear:hover{border-color:#CBD5E1;background:#F8FAFC}
+.btn-clear:active{transform:scale(.98)}
+.hint{color:var(--mut);font-size:.78rem;margin-top:10px}
+
+/* hatua za hesabu ndani ya matokeo */
+.steps{margin-top:14px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.steps summary{padding:12px 14px;font-weight:700;cursor:pointer;list-style:none;background:#F8FAFC;font-size:.92rem}
+.steps summary::-webkit-details-marker{display:none}
+.steps summary::after{content:"+";float:right;color:var(--p);font-weight:800}
+.steps[open] summary::after{content:"\2212"}
+.steps .tbl-wrap{border:0;border-radius:0}
+.steps .tbl{min-width:0;font-size:.84rem}
+.steps .tbl th,.steps .tbl td{padding:10px 8px}
+
+/* viungo vya maelezo zaidi */
+.more-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.more-links a{background:#EEF2FF;color:#3730A3;font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 14px}
+.more-links a:hover{background:#E0E7FF}
+
+/* historia */
+.hist{margin-top:16px}
+.hist-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.hist-head h2{margin:0}
+.link-btn{color:#DC2626;font-weight:700;font-size:.85rem;padding:7px 12px;border-radius:10px}
+.link-btn:hover{background:#FEE2E2}
+.link-btn[disabled]{opacity:.35;cursor:default;background:none}
+.hist-list{list-style:none}
+.h-item{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
+.h-item:last-child{border-bottom:0}
+.h-use{flex:1;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;padding:12px 8px;border-radius:12px}
+.h-use:hover{background:var(--p-soft)}
+.h-main b{display:block;font-variant-numeric:tabular-nums}
+.h-main small,.h-net small{display:block;color:var(--mut);font-size:.76rem}
+.h-net{text-align:right;flex:none}
+.h-net b{display:block;color:#3730A3;font-variant-numeric:tabular-nums}
+.h-del{flex:none;width:42px;color:#94A3B8;font-size:1.4rem;border-radius:12px}
+.h-del:hover{color:#DC2626;background:#FEE2E2}
+.hist-empty{color:var(--mut);text-align:center;padding:20px 8px;font-size:.92rem}
+.hist-note{color:var(--mut);font-size:.76rem;margin-top:10px}
