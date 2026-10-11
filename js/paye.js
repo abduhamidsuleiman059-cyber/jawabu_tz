@@ -31,11 +31,15 @@
       other  = document.getElementById('other'),
       nssfOn = document.getElementById('nssfOn'),
       out    = document.getElementById('payeResult'),
-      clearBtn = document.getElementById('clearBtn'),
-      histList = document.getElementById('histList'),
-      histClear = document.getElementById('histClear'),
-      saveNote = document.getElementById('saveNote'),
-      noteDefault = saveNote ? saveNote.innerHTML : '';
+      clearBtn  = document.getElementById('clearBtn'),
+      saveNote  = document.getElementById('saveNote'),
+      noteDefault = saveNote ? saveNote.innerHTML : '',
+      histOpen  = document.getElementById('histOpen'),
+      histBadge = document.getElementById('histBadge'),
+      sheet     = document.getElementById('histSheet'),
+      histClose = document.getElementById('histClose'),
+      histList  = document.getElementById('histList'),
+      histClear = document.getElementById('histClear');
 
   function num(v){ return parseInt(String(v).replace(/[^\d]/g,''), 10) || 0; }
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
@@ -95,9 +99,37 @@
       '<div class="more-links">' +
         '<a href="nssf.html?mshahara=' + g + '">Maelezo zaidi ya NSSF</a>' +
         '<a href="#viwango">Viwango vya PAYE</a>' +
-        (hist.length ? '<a href="#histCard" class="js-hist">Historia (' + hist.length + ')</a>' : '') +
+        (hist.length ? '<a href="#" class="js-hist">Historia (' + hist.length + ')</a>' : '') +
       '</div>';
   }
+
+  /* ---------- Paneli ya historia (imefichwa mpaka ubonyeze Historia) ---------- */
+  var sheetTimer, lastFocus;
+  function openSheet(){
+    clearTimeout(sheetTimer);
+    lastFocus = document.activeElement;
+    sheet.hidden = false;
+    void sheet.offsetWidth;                       // anzisha uhuishaji
+    sheet.classList.add('show');
+    document.body.classList.add('sheet-open');
+    if(histOpen) histOpen.setAttribute('aria-expanded', 'true');
+    histClose.focus();
+  }
+  function closeSheet(){
+    if(sheet.hidden) return;
+    sheet.classList.remove('show');
+    document.body.classList.remove('sheet-open');
+    if(histOpen) histOpen.setAttribute('aria-expanded', 'false');
+    sheetTimer = setTimeout(function(){ sheet.hidden = true; }, 230);
+    if(lastFocus && lastFocus.focus){ try{ lastFocus.focus({preventScroll: true}); }catch(e){} }
+  }
+  if(histOpen) histOpen.addEventListener('click', openSheet);
+  histClose.addEventListener('click', closeSheet);
+  sheet.addEventListener('click', function(e){ if(e.target.closest('[data-close]')) closeSheet(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeSheet(); });
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.js-hist')){ e.preventDefault(); openSheet(); }
+  });
 
   /* ---------- Historia (inakaa kwenye kifaa tu) ---------- */
   var KEY = 'jawabu_paye_history_v1', MAX = 10;
@@ -124,6 +156,7 @@
 
   function renderHist(){
     histClear.disabled = !hist.length;
+    if(histBadge){ histBadge.textContent = hist.length; histBadge.hidden = !hist.length; }
     if(!hist.length){
       histList.innerHTML = '<li class="hist-empty">Bado hujahifadhi hesabu yoyote. Weka mshahara kisha bonyeza <b>Kokotoa</b>.</li>';
       return;
@@ -160,6 +193,8 @@
     store(); renderHist();
   }
 
+  function resetNote(){ if(saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; } }
+
   histList.addEventListener('click', function(e){
     var del = e.target.closest('.h-del'),
         use = e.target.closest('.h-use'),
@@ -167,7 +202,7 @@
     if(del){
       hist.splice(+del.getAttribute('data-i'), 1);
       store(); renderHist(); render();
-      if(!hist.length && saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; }
+      if(!hist.length) resetNote();
     } else if(use){
       var li = use.closest('.h-item');
       var open = li.classList.toggle('open');
@@ -179,30 +214,15 @@
       other.value = h.o ? fmt(h.o) : '';
       nssfOn.checked = !!h.n;
       render();
-      out.scrollIntoView({behavior: 'smooth', block: 'start'});
+      closeSheet();
+      setTimeout(function(){ out.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 260);
     }
-  });
-
-  // "Tazama historia": nenda kwenye historia na ufungue hesabu ya kwanza
-  function showHistory(){
-    var card = document.getElementById('histCard');
-    if(!card) return;
-    card.scrollIntoView({behavior: 'smooth', block: 'start'});
-    var first = histList.querySelector('.h-item');
-    if(first){
-      first.classList.add('open');
-      first.querySelector('.h-use').setAttribute('aria-expanded', 'true');
-    }
-  }
-  document.addEventListener('click', function(e){
-    if(e.target.closest('.js-hist')){ e.preventDefault(); showHistory(); }
   });
 
   histClear.addEventListener('click', function(){
     if(!hist.length) return;
     if(window.confirm('Futa historia yote ya hesabu?')){
-      hist = []; store(); renderHist(); render();
-      if(saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; }
+      hist = []; store(); renderHist(); render(); resetNote();
     }
   });
 
@@ -225,15 +245,14 @@
     render();
     if(saveNote){
       saveNote.className = 'hint ok';
-      saveNote.innerHTML = '✓ Imehifadhiwa kwenye historia. <a href="#histCard" class="js-hist">Tazama historia (' + hist.length + ')</a>';
+      saveNote.innerHTML = '✓ Imehifadhiwa kwenye historia. <a href="#" class="js-hist">Tazama historia (' + hist.length + ')</a>';
     }
     out.scrollIntoView({behavior: 'smooth', block: 'start'});
   });
 
   clearBtn.addEventListener('click', function(){
     salary.value = ''; other.value = ''; nssfOn.checked = true;
-    render(); salary.focus();
-    if(saveNote){ saveNote.className = 'hint'; saveNote.innerHTML = noteDefault; }
+    render(); resetNote(); salary.focus();
   });
 
   // Kiungo cha moja kwa moja: paye.html?mshahara=800000 (&nssf=0 &makato=50000)

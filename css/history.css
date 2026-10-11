@@ -1,4 +1,4 @@
-/* Jawabu TZ - vitufe vya kufuta, hatua za hesabu na historia ya kikokotoo */
+/* Jawabu TZ - vitufe vya kufuta, hatua za hesabu na historia (paneli) */
 .btn-row{display:flex;gap:10px}
 .btn-row .btn-main{flex:1}
 .btn-clear{flex:none;padding:0 22px;height:52px;border-radius:14px;border:2px solid var(--line);background:#fff;font-weight:700;color:#475569;font-size:1rem}
@@ -8,6 +8,14 @@
 .hint a{color:var(--p);font-weight:700;text-decoration:underline}
 .hint.ok{color:#15803D;font-weight:600}
 .hint.ok a{color:#15803D}
+
+/* kichwa cha fomu + kitufe cha Historia */
+.form-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.form-head h2{margin:0}
+.hist-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:#EEF2FF;color:#3730A3;font-weight:700;font-size:.85rem;white-space:nowrap}
+.hist-btn:hover{background:#E0E7FF}
+.badge{min-width:20px;height:20px;border-radius:10px;background:#3730A3;color:#fff;font-size:.72rem;display:grid;place-items:center;padding:0 6px}
+.badge[hidden]{display:none}
 
 /* hatua za hesabu ndani ya matokeo */
 .steps{margin-top:14px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -25,12 +33,27 @@
 .more-links a:hover{background:#E0E7FF}
 .more-links a.js-hist{background:#3730A3;color:#fff}
 
-/* historia */
-.hist{margin-top:16px}
-#histCard{scroll-margin-top:72px}
+/* paneli ya historia: inapanda kutoka chini (simu), inaingia kulia (kompyuta) */
+body.sheet-open{overflow:hidden}
+.sheet{position:fixed;inset:0;z-index:100}
+.sheet[hidden]{display:none}
+.sheet-bg{position:absolute;inset:0;background:rgba(15,23,42,.45);opacity:0;transition:opacity .2s}
+.sheet.show .sheet-bg{opacity:1}
+.sheet-panel{position:absolute;left:0;right:0;bottom:0;max-height:82vh;max-height:82dvh;overflow:auto;background:#fff;border-radius:22px 22px 0 0;padding:10px 18px calc(18px + env(safe-area-inset-bottom,0px));box-shadow:0 -12px 40px rgba(15,23,42,.25);transform:translateY(100%);transition:transform .22s ease}
+.sheet.show .sheet-panel{transform:none}
+.sheet-grab{width:42px;height:5px;border-radius:3px;background:#CBD5E1;margin:0 auto 10px}
+.sheet-x{width:38px;height:38px;border-radius:12px;font-size:1.6rem;line-height:1;color:#64748B}
+.sheet-x:hover{background:#F1F5F9}
+.sheet-foot{margin-top:8px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+@media (min-width:800px){
+  .sheet-panel{left:auto;top:0;width:420px;max-height:none;border-radius:0;padding:18px 22px;transform:translateX(100%)}
+  .sheet-grab{display:none}
+}
+
+/* ndani ya paneli */
 .hist-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
-.hist-head h2{margin:0}
-.link-btn{color:#DC2626;font-weight:700;font-size:.85rem;padding:7px 12px;border-radius:10px}
+.hist-head h2{margin:0;font-size:1.1rem}
+.link-btn{color:#DC2626;font-weight:700;font-size:.85rem;padding:8px 12px;border-radius:10px;margin-left:-12px}
 .link-btn:hover{background:#FEE2E2}
 .link-btn[disabled]{opacity:.35;cursor:default;background:none}
 .hist-list{list-style:none}
@@ -53,5 +76,5 @@
 .h-detail .res-rows li{padding:9px 0;font-size:.9rem}
 .h-reuse{margin-top:8px;width:100%;height:44px;border-radius:12px;background:#EEF2FF;color:#3730A3;font-weight:700}
 .h-reuse:hover{background:#E0E7FF}
-.hist-empty{color:var(--mut);text-align:center;padding:20px 8px;font-size:.92rem}
-.hist-note{color:var(--mut);font-size:.76rem;margin-top:10px}
+.hist-empty{color:var(--mut);text-align:center;padding:26px 8px;font-size:.92rem}
+.hist-note{color:var(--mut);font-size:.76rem}

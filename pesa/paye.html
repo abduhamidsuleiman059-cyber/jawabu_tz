@@ -44,7 +44,13 @@
   <section class="wrap calc-wrap">
     <div class="calc-grid">
       <form class="pcard" id="payeForm" novalidate>
-        <h2>Weka taarifa zako</h2>
+        <div class="form-head">
+          <h2>Weka taarifa zako</h2>
+          <button type="button" class="hist-btn" id="histOpen" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
+            Historia <span class="badge" id="histBadge" hidden>0</span>
+          </button>
+        </div>
         <div class="fld">
           <label for="salary">Mshahara ghafi wa kila mwezi</label>
           <div class="inp"><span>TSh</span><input id="salary" type="text" inputmode="numeric" autocomplete="off" placeholder="Mfano: 800,000"></div>
@@ -62,21 +68,12 @@
           <button type="submit" class="btn-main">Kokotoa</button>
           <button type="button" class="btn-clear" id="clearBtn">Futa</button>
         </div>
-       <p class="hint" id="saveNote">Bonyeza <b>Kokotoa</b> ili kuhifadhi hesabu kwenye historia.</p>
+        <p class="hint" id="saveNote">Bonyeza <b>Kokotoa</b> ili kuhifadhi hesabu kwenye historia.</p>
       </form>
 
       <div class="pcard" id="payeResult" aria-live="polite">
         <div class="res-empty">Weka mshahara wako wa kila mwezi, jibu litaonekana hapa papo hapo.</div>
       </div>
-    </div>
-
-    <div class="pcard hist" id="histCard">
-      <div class="hist-head">
-        <h2>Historia ya hesabu</h2>
-        <button type="button" class="link-btn" id="histClear">Futa historia</button>
-      </div>
-      <ul class="hist-list" id="histList"></ul>
-      <p class="hist-note">Hesabu zako zimehifadhiwa kwenye kifaa chako tu. Hatuzituma popote.</p>
     </div>
 
     <div class="ad" data-slot="paye-top">Nafasi ya tangazo</div>
@@ -144,6 +141,16 @@
     <p class="foot-copy">© 2026 Jawabu TZ. Haki zote zimehifadhiwa.</p>
   </div>
 </footer>
+
+<div class="sheet" id="histSheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="histTitle">
+    <div class="sheet-grab" aria-hidden="true"></div>
+    <div class="hist-head"><h2 id="histTitle">Historia ya hesabu</h2><button type="button" class="sheet-x" id="histClose" aria-label="Funga historia">×</button></div>
+    <ul class="hist-list" id="histList"></ul>
+    <div class="sheet-foot"><button type="button" class="link-btn" id="histClear">Futa historia yote</button><p class="hist-note">Hesabu zako zimehifadhiwa kwenye kifaa chako tu. Hatuzituma popote.</p></div>
+  </div>
+</div>
 
 <nav id="bottom-nav" aria-label="Menyu kuu"></nav>
 
