@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../css/calc.css">
 <link rel="stylesheet" href="../css/history.css">
 <link rel="stylesheet" href="../css/glass-cards.css">
+<link rel="stylesheet" href="../css/modal.css">
 </head>
 <body class="gl" data-root="../">
 
@@ -44,7 +45,7 @@
 
   <section class="wrap calc-wrap">
     <div class="calc-grid">
-      <form class="pcard" id="nssfForm" novalidate>
+      <form class="pcard pb-32 md:pb-10" id="nssfForm" novalidate>
         <div class="form-head">
           <h2>Weka taarifa zako</h2>
           <button type="button" class="hist-btn" id="histOpen" aria-haspopup="dialog">
@@ -63,7 +64,7 @@
           <small>12 = mwaka mmoja. Weka 60 kwa miaka mitano.</small>
         </div>
         <div class="btn-row">
-          <button type="submit" class="btn-main">Kokotoa</button>
+          <button type="submit" class="btn-main w-full sticky bottom-24 z-10 shadow-xl">Kokotoa</button>
           <button type="button" class="btn-clear" id="clearBtn">Futa</button>
         </div>
         <p class="hint" id="saveNote">Bonyeza <b>Kokotoa</b> ili kuhifadhi hesabu kwenye historia.</p>
@@ -134,6 +135,7 @@
 
 <script src="../js/icons.js"></script>
 <script src="../js/nav.js"></script>
+<script src="../js/confirm.js"></script>
 <script src="../js/nssf.js"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+/* Jawabu TZ - dirisha la uthibitisho (modal) na marekebisho ya kibodi kwenye simu */
+.cm{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:20px}
+.cm[hidden]{display:none}
+.cm-bg{position:absolute;inset:0;background:rgba(2,6,23,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transition:opacity .2s}
+.cm.show .cm-bg{opacity:1}
+.cm-card{position:relative;width:100%;max-width:380px;padding:26px 22px 20px;border-radius:22px;color:#fff;text-align:center;
+  background:linear-gradient(160deg,#2547C9 0%,#1B2F8F 55%,#142266 100%);
+  border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 70px rgba(2,6,23,.55),inset 0 1px 0 rgba(255,255,255,.22);
+  opacity:0;transform:scale(.88)}
+.cm.show .cm-card{animation:cm-in .22s cubic-bezier(.2,.9,.3,1.2) forwards}
+@keyframes cm-in{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+.cm-ic{width:52px;height:52px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+.cm-ic svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cm-text{font-size:1.08rem;font-weight:700;line-height:1.35;margin-bottom:6px;color:#fff}
+.cm-sub{font-size:.85rem;color:#C7D2FE;margin-bottom:20px}
+.cm-btns{display:flex;gap:10px}
+.cm-btns button{flex:1;height:48px;border-radius:14px;font-weight:800;font-size:.98rem;font-family:inherit}
+.cm-cancel{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}
+.cm-cancel:hover{background:rgba(255,255,255,.12)}
+.cm-ok{background:linear-gradient(90deg,#F87171,#DC2626);color:#fff;border:0;box-shadow:0 10px 24px rgba(220,38,38,.4)}
+.cm-ok:active,.cm-cancel:active{transform:scale(.98)}
+@media (prefers-reduced-motion:reduce){.cm.show .cm-card{animation:none;opacity:1;transform:none}}
+
+/* kibodi ya simu: nafasi chini ya fomu + kitufe cha Kokotoa kinabaki juu ya kibodi */
+.pb-32{padding-bottom:8rem}
+@media (min-width:768px){.md\:pb-10{padding-bottom:2.5rem}}
+.w-full{width:100%}
+.shadow-xl{box-shadow:0 14px 30px rgba(15,23,42,.28)}
+form .btn-row{position:sticky;bottom:96px;z-index:10}

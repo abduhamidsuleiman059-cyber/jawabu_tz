@@ -167,9 +167,11 @@
     });
     histClear.addEventListener('click', function(){
       if(!hist.length) return;
-      if(window.confirm('Futa historia yote ya hesabu?')){
-        hist = []; store(); renderHist(); render(); resetNote();
-      }
+      JawabuConfirm('Una uhakika unataka kufuta historia yote?', function(){
+        hist = [];                                  // setHistory([])
+        try{ localStorage.removeItem(cfg.key); }catch(e){}
+        renderHist(); render(); resetNote();
+      });
     });
 
     /* ---------- Fomu ---------- */
