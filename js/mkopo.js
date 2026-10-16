@@ -23,6 +23,10 @@
     empty: 'Weka kiasi cha mkopo, riba na muda, jibu litaonekana hapa papo hapo.',
     valid: function(v){ return v.amt > 0 && v.months > 0 && v.rate >= 0; },
     calc: calc,
+    shareTitle: 'Hesabu ya mkopo - Jawabu TZ',
+    shareText: function(v, r){
+      return 'Mkopo: TSh ' + fmt(v.amt) + ' kwa riba ya ' + v.rate + '% kwa miezi ' + v.months + '\nMalipo kwa mwezi: TSh ' + fmt(r.pay) + '\nJumla ya riba: TSh ' + fmt(r.interest) + '\nJumla utakayolipa: TSh ' + fmt(r.total);
+    },
     view: function(v, r, h){
       var rows = r.rows.map(function(x){
         return '<tr><td>' + x.k + '</td><td>' + fmt(x.pr) + '</td><td>' + fmt(x.int) + '</td><td>' + fmt(x.bal) + '</td></tr>';

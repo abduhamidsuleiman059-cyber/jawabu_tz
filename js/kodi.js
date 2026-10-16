@@ -19,6 +19,10 @@
     empty: 'Weka kiasi cha pango, jibu litaonekana hapa papo hapo.',
     valid: function(v){ return v.rent > 0 && v.months > 0; },
     calc: calc,
+    shareTitle: 'Hesabu ya kodi ya pango - Jawabu TZ',
+    shareText: function(v, r){
+      return 'Pango kamili: TSh ' + fmt(r.gross) + ' kwa mwezi\nKodi ya zuio (10%): TSh ' + fmt(r.tax) + '\nMwenye nyumba anapokea: TSh ' + fmt(r.net) + '\nJumla kwa miezi ' + v.months + ': TSh ' + fmt(r.netT);
+    },
     view: function(v, r, h){
       return '<div class="res-main"><small>Mwenye nyumba anapokea kwa mwezi</small><strong>TSh ' + fmt(r.net) + '</strong></div>' +
         '<div class="bar" aria-hidden="true"><i style="width:90%;background:#22D3EE"></i><i style="width:10%;background:#F59E0B"></i></div>' +
