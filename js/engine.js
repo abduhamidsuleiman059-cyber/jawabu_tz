@@ -31,6 +31,7 @@
 
     function parse(f, raw){
       if(f.type === 'chk') return !!raw;
+      if(f.type === 'text') return String(raw == null ? '' : raw).trim().slice(0, 300);
       if(f.type === 'dec'){
         var s = String(raw).replace(',', '.').replace(/[^\d.]/g, '');
         var p = s.split('.'); if(p.length > 2) s = p[0] + '.' + p.slice(1).join('');
@@ -51,6 +52,7 @@
         var e = els[f.id], x = v[f.id];
         if(f.type === 'chk') e.checked = !!x;
         else if(f.type === 'money') e.value = x ? fmt(x) : '';
+        else if(f.type === 'text') e.value = x || '';
         else e.value = x ? String(x) : '';
       });
     }
@@ -164,7 +166,7 @@
         if(!f.q) return;
         var x = v[f.id];
         if(f.type === 'chk') p.push(f.q + '=' + (x ? 1 : 0));
-        else if(x) p.push(f.q + '=' + x);
+        else if(x) p.push(f.q + '=' + (f.type === 'text' ? encodeURIComponent(x) : x));
       });
       var base = location.protocol === 'file:' ? location.href.split('?')[0] : location.origin + location.pathname;
       return base + (p.length ? '?' + p.join('&') : '');
@@ -227,6 +229,7 @@
       var e = els[f.id];
       if(f.type === 'chk'){ e.addEventListener('change', render); return; }
       e.addEventListener('input', function(){
+        if(f.type === 'text'){ render(); return; }
         if(f.type === 'money'){ var n = parse(f, e.value); e.value = n ? fmt(n) : ''; }
         else if(f.type === 'dec'){ var s = e.value.replace(',', '.').replace(/[^\d.]/g, ''); var p = s.split('.'); if(p.length > 2) s = p[0] + '.' + p.slice(1).join(''); e.value = s; }
         else { var m = parse(f, e.value); e.value = m ? String(f.max ? Math.min(m, f.max) : m) : ''; }
@@ -252,7 +255,7 @@
 
     clearBtn.addEventListener('click', function(){
       write(defaults()); render(); resetNote();
-      var f = cfg.fields.filter(function(x){ return x.type !== 'chk'; })[0]; if(f) els[f.id].focus();
+      var f = cfg.fields.filter(function(x){ return x.type !== 'chk' && x.type !== 'text'; })[0]; if(f) els[f.id].focus();
     });
 
     // viungo vya moja kwa moja, mfano ?mshahara=800000

@@ -1,0 +1,63 @@
+/* Jawabu TZ - ukurasa wa NECTA (muundo wa mwanga kama index, siyo glass) */
+.tabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:5px;box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:16px}
+.tabs button{flex:1;height:46px;border-radius:12px;font-weight:700;font-size:.95rem;color:#475569;font-family:inherit}
+.tabs button[aria-selected="true"]{background:linear-gradient(90deg,#4F46E5,#7C3AED);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.panel[hidden]{display:none}
+
+/* vitufe vya kuchagua (segmented) */
+.seg{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.seg button{flex:1;min-width:0;padding:10px 6px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:700;font-size:.82rem;color:#475569;font-family:inherit;line-height:1.2}
+.seg button[aria-pressed="true"]{border-color:#4F46E5;background:#EEF2FF;color:#3730A3}
+.sel{width:100%;height:52px;border:2px solid var(--line);border-radius:14px;background:#fff;padding:0 12px;font-size:1rem;font-weight:600;color:var(--ink);font-family:inherit}
+.sel:focus{border-color:var(--p);outline:0}
+
+/* matokeo ya utafutaji */
+.find-out{margin-top:4px}
+.find-hint{background:#F8FAFC;border:1px dashed #CBD5E1;border-radius:14px;padding:14px;color:var(--mut);font-size:.9rem;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{background:#EEF2FF;color:#3730A3;border-radius:999px;padding:7px 12px;font-size:.8rem;font-weight:700}
+.chip small{color:#6366F1;font-weight:600;margin-right:4px}
+.go{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;border-radius:14px;background:linear-gradient(90deg,#2563EB,#7C3AED);color:#fff;font-weight:800;font-size:1rem;margin-bottom:10px;text-align:center}
+.go svg,.ghost svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ghost{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:46px;padding:8px 12px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:700;color:#334155;margin-bottom:8px;font-size:.92rem;text-align:center;font-family:inherit}
+.ghost:hover{border-color:#C7D2FE;background:#F8FAFF}
+.tip{font-size:.82rem;color:var(--mut);margin-top:6px}
+.recent{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.recent h3{font-size:.85rem;color:var(--mut);margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.recent h3 button{color:#DC2626;font-weight:700;font-size:.8rem}
+.rc{display:inline-flex;gap:6px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:.8rem;font-weight:600;margin:0 6px 6px 0;color:#334155}
+.rc:hover{border-color:#A5B4FC}
+
+/* kikokotoo cha division */
+.sub-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.sub-row:last-child{border-bottom:0}
+.sub-row .nm{flex:1;min-width:0;font-weight:600;font-size:.9rem}
+.grs{display:flex;gap:4px;flex:none;flex-wrap:wrap;justify-content:flex-end;max-width:62%}
+.gb{width:34px;height:34px;border-radius:10px;border:2px solid var(--line);background:#fff;font-weight:800;font-size:.85rem;color:#475569;font-family:inherit}
+.gb[aria-pressed="true"]{background:#4F46E5;border-color:#4F46E5;color:#fff}
+.mk{width:84px;height:40px;border:2px solid var(--line);border-radius:10px;text-align:center;font-weight:700;font-size:1rem;font-family:inherit;color:var(--ink)}
+.mk:focus{border-color:var(--p);outline:0}
+.rows-note{font-size:.8rem;color:var(--mut);margin:0 0 6px}
+.dv-big{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.dv-big strong{font-size:2.4rem !important;line-height:1}
+.dv-pts{text-align:right;color:var(--mut);font-size:.85rem}
+.dv-pts b{display:block;font-size:1.3rem;color:#3730A3}
+.dv-bar{position:relative;display:flex;height:12px;border-radius:99px;overflow:hidden;margin:6px 0 4px}
+.dv-bar i{display:block;height:100%}
+.dv-wrap{position:relative;padding-top:8px}
+.dv-mark{position:absolute;top:0;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #0F172A;transform:translateX(-50%)}
+.dv-lbl{display:flex;font-size:.7rem;color:var(--mut);font-weight:700}
+.dv-lbl span{text-align:center}
+.cnt td{font-variant-numeric:tabular-nums}
+.cnt tr.used td{font-weight:700}
+.cnt tr.out td{color:#94A3B8}
+.advice{background:#FEF3C7;border:1px solid #FDE68A;color:#78350F;border-radius:14px;padding:12px 14px;font-size:.88rem;margin-top:12px}
+.advice.ok{background:#DCFCE7;border-color:#BBF7D0;color:#14532D}
+.pill-warn{background:#FEF3C7;color:#78350F;border-radius:10px;padding:8px 10px;font-size:.82rem;margin-bottom:10px}
+
+/* historia kwenye muundo wa mwanga */
+.hist-empty b{color:var(--ink)}
+.hist-empty span{color:var(--mut)}
+.h-share{color:#047857;border-color:#6EE7B7;background:#fff}
+.h-share:hover{background:#ECFDF5}
+.h-del:hover,.h-del:focus-visible{color:#DC2626;background:#FEE2E2}

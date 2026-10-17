@@ -26,7 +26,7 @@
 @media (min-width:768px){.md\:pb-10{padding-bottom:2.5rem}}
 .w-full{width:100%}
 .shadow-xl{box-shadow:0 14px 30px rgba(15,23,42,.28)}
-form .btn-row{position:sticky;bottom:96px;z-index:10}
+form.pb-32 .btn-row{position:sticky;bottom:96px;z-index:10}
 
 /* ---------- Historia: marekebisho ya muonekano ---------- */
 .hist-list{max-height:70vh;overflow-y:auto;overscroll-behavior:contain;padding-right:2px}
