@@ -43,7 +43,7 @@
     return host(y) + '/results/' + y + '/' + ex + '/results/' + (ex === 'psle' ? 'shl_' : '') + code + '.htm';
   }
   function indexUrl(ex, y){ return host(y) + '/results/' + y + '/' + ex + (ex === 'psle' ? '/psle.htm' : '/index.htm'); }
-  var SEARCH_URL = 'https://www.necta.go.tz/search_results';
+  function hubUrl(ex){ return 'https://www.necta.go.tz/results/view/' + ex; }   // ukurasa rasmi wa matokeo ya NECTA (umethibitishwa)
 
   var ex = 'csee', sNo = $('sNo'), sYear = $('sYear'), findOut = $('findOut'), sEg = $('sEg');
   var userPickedYear = false;
@@ -96,7 +96,7 @@
       '<a class="go" id="goSchool" href="' + url + '" target="_blank" rel="noopener noreferrer">' + ICON_GO + 'Fungua matokeo ya shule (NECTA)</a>' +
       (p.cand ? '<button type="button" class="ghost" id="copyNo">' + ICON_COPY + 'Nakili namba yangu ' + p.cand + '</button>' : '') +
       '<a class="ghost" href="' + indexUrl(ex, y) + '" target="_blank" rel="noopener noreferrer">' + ICON_GO + 'Orodha ya shule za mwaka ' + y + '</a>' +
-      '<a class="ghost" href="' + SEARCH_URL + '" target="_blank" rel="noopener noreferrer">' + ICON_GO + 'Tafuta kwa NECTA (namba ya mtahiniwa)</a>' +
+      '<a class="ghost" href="' + hubUrl(ex) + '" target="_blank" rel="noopener noreferrer">' + ICON_GO + 'Matokeo yote ya ' + EX[ex].name + ' (NECTA)</a>' +
       '<p class="tip">Ukurasa wa NECTA unaonyesha shule nzima. Tafuta namba yako ndani yake kwa Ctrl+F (kompyuta) au "Find in page" (simu).</p>';
     var cp = $('copyNo'); if(cp) cp.addEventListener('click', function(){ copy(p.cand, 'Namba imenakiliwa. Ibandike kwenye utafutaji wa ukurasa.'); });
     var go = $('goSchool'); if(go) go.addEventListener('click', function(){ saveRecent(); });
@@ -280,7 +280,7 @@
     }
   };
 
-  /* ---- UI ya masomo ---- */
+ /* ---- UI ya masomo ---- */
   var rowsEl = $('rows'), lvlEl = $('lvl'), gEl = $('g'), noteEl = $('rowsNote'), builtFor = '';
   function fire(el){ el.dispatchEvent(new Event('input', {bubbles: true})); }
 
@@ -321,7 +321,7 @@
     if(m[s] === g) delete m[s]; else m[s] = g;
     gEl.value = encode(m); fire(gEl);
   });
- rowsEl.addEventListener('input', function(e){
+  rowsEl.addEventListener('input', function(e){
     var i = e.target.closest('.mk'); if(!i) return;
     var n = i.value.replace(/[^\d]/g, '').slice(0, 2); if(n !== '' && +n > 50) n = '50';
     i.value = n;
