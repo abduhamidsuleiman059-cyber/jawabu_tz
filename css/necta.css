@@ -61,3 +61,21 @@
 .h-share{color:#047857;border-color:#6EE7B7;background:#fff}
 .h-share:hover{background:#ECFDF5}
 .h-del:hover,.h-del:focus-visible{color:#DC2626;background:#FEE2E2}
+
+/* GPA */
+.gp-head{display:grid;grid-template-columns:minmax(0,1fr) 62px minmax(0,1.5fr) 30px;gap:8px;font-size:.72rem;font-weight:700;color:var(--mut);padding:0 0 4px}
+.gp-row{display:grid;grid-template-columns:minmax(0,1fr) 62px minmax(0,1.5fr) 30px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.gp-row:last-child{border-bottom:0}
+.gp-row .nm{font-weight:600;font-size:.88rem}
+.gp-row .cr{width:62px;height:40px;border:2px solid var(--line);border-radius:10px;text-align:center;font-weight:700;font-size:1rem;font-family:inherit;color:var(--ink)}
+.gp-row .cr:focus{border-color:var(--p);outline:0}
+.gp-row .grs{max-width:none;justify-content:flex-start;gap:3px}
+.gp-row .gb{width:auto;min-width:0;flex:1;height:36px;padding:0 2px;font-size:.78rem}
+.gp-x{width:30px;height:30px;border-radius:8px;color:#94A3B8;font-size:1.2rem;line-height:1}
+.gp-x:hover{color:#DC2626;background:#FEE2E2}
+.prev{margin-top:14px;border:1px solid var(--line);border-radius:14px;padding:0 14px 2px}
+.prev summary{padding:12px 0;font-weight:700;cursor:pointer;list-style:none;font-size:.92rem}
+.prev summary::-webkit-details-marker{display:none}
+.prev summary::after{content:"+";float:right;color:var(--p);font-weight:800}
+.prev[open] summary::after{content:"\2212"}
+.need li b{color:#3730A3}
