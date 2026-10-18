@@ -79,3 +79,12 @@
 .prev summary::after{content:"+";float:right;color:var(--p);font-weight:800}
 .prev[open] summary::after{content:"\2212"}
 .need li b{color:#3730A3}
+/* ---- Alama ---- */
+.al-head,.al-row{display:grid;grid-template-columns:minmax(0,1fr) 76px 40px 30px;gap:8px;align-items:center}
+.al-head{font-size:.72rem;font-weight:700;color:var(--mut);padding:0 0 4px}
+.al-row{padding:7px 0;border-bottom:1px solid var(--line)}
+.al-row:last-child{border-bottom:0}
+.al-row .an{min-width:0;height:40px;border:2px solid var(--line);border-radius:10px;padding:0 10px;font-size:.92rem;font-family:inherit;color:var(--ink)}
+.al-row .mk{width:76px;height:40px}
+.al-row .an:focus,.al-row .mk:focus{border-color:var(--p);outline:0}
+.gtag{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:.9rem;color:#fff;background:#CBD5E1}
