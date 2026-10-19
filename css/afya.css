@@ -1,0 +1,17 @@
+/* Jawabu TZ - kurasa za Afya: hero ya moyo na stethoscope (inatumika na bmi, kalori, kujifungua) */
+body.af .ph{position:relative;overflow:hidden;color:#0F172A;background:radial-gradient(520px 300px at 88% 40%,rgba(251,113,133,.28),transparent 65%),linear-gradient(120deg,#FFF1F5 0%,#FDE4EC 55%,#FFF7FA 100%);border-bottom:1px solid #FBCFE0}
+body.af .ph .wrap{position:relative;z-index:2}
+body.af .ph h1{color:#0F172A}
+body.af .ph p{color:#475569}
+body.af .crumb{color:#BE185D}
+body.af .crumb a{color:#9D174D}
+body.af .ph{min-height:275px}
+.af-art{position:absolute;z-index:1;right:-34px;top:62px;height:calc(100% - 118px);width:auto;max-width:none;pointer-events:none;opacity:.38}
+@media(min-width:640px){body.af .ph{min-height:330px}}
+.af-art .script{font-family:"Segoe Script","Brush Script MT","Bradley Hand",cursive;font-size:19px;fill:#BE185D}
+@media(min-width:640px){.af-art{right:3%;opacity:1;top:66px;height:calc(100% - 122px)}}
+@media(min-width:1000px){.af-art{right:9%}}
+.bmi-in{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bmi-in .inp span{min-width:38px}
+.af-note{margin-top:14px;background:#FFF1F5;border:1px solid #FBCFE0;border-radius:12px;padding:12px 14px;font-size:.84rem;color:#9D174D}
+.af-note b{color:#831843}
