@@ -11,7 +11,13 @@ body.af .ph{min-height:275px}
 .af-art .script{font-family:"Segoe Script","Brush Script MT","Bradley Hand",cursive;font-size:19px;fill:#BE185D}
 @media(min-width:640px){.af-art{right:3%;opacity:1;top:66px;height:calc(100% - 122px)}}
 @media(min-width:1000px){.af-art{right:9%}}
-.bmi-in{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bmi-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.bmi-in .fld{min-width:0}
+.bmi-in .inp input{min-width:0;width:100%}
 .bmi-in .inp span{min-width:38px}
 .af-note{margin-top:14px;background:#FFF1F5;border:1px solid #FBCFE0;border-radius:12px;padding:12px 14px;font-size:.84rem;color:#9D174D}
 .af-note b{color:#831843}
+.grp-t{margin:16px 0 4px;font-weight:700;font-size:.9rem;color:#334155}
+ul.plain{margin:6px 0 0 18px;list-style:disc}
+ul.plain li{margin:3px 0}
+.tbl.two{min-width:0}
