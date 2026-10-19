@@ -21,3 +21,7 @@ body.af .ph{min-height:275px}
 ul.plain{margin:6px 0 0 18px;list-style:disc}
 ul.plain li{margin:3px 0}
 .tbl.two{min-width:0}
+input.sel[type=date]{min-height:52px;display:block}
+.stones li.done b{color:#16A34A}
+.stones li.done span::before{content:"\2713  ";color:#16A34A;font-weight:800}
+.edd{font-size:1.55rem !important}
