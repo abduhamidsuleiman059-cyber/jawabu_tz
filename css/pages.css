@@ -1,0 +1,77 @@
+/* Jawabu TZ - kurasa za kawaida: Kuhusu, Mawasiliano, Faragha, 404 (kila moja na hero yake) */
+body.pg .ph{position:relative;overflow:hidden;min-height:270px;padding-bottom:56px}
+body.pg .ph .wrap{position:relative;z-index:2}
+.pg-art{position:absolute;z-index:1;right:-50px;top:64px;height:calc(100% - 84px);width:auto;max-width:none;pointer-events:none;opacity:.34}
+@media(min-width:640px){body.pg .ph{min-height:340px}.pg-art{right:3%;opacity:1}}
+@media(min-width:1000px){.pg-art{right:8%}}
+body.pg-about .ph{background:radial-gradient(620px 340px at 85% 30%,rgba(34,211,238,.35),transparent 62%),linear-gradient(135deg,#0B1235 0%,#14206B 55%,#3B1E8F 100%)}
+body.pg-contact .ph{background:radial-gradient(620px 340px at 85% 30%,rgba(56,189,248,.42),transparent 62%),linear-gradient(135deg,#052E4B 0%,#0B5C8C 58%,#0284C7 100%)}
+body.pg-privacy .ph{background:radial-gradient(620px 340px at 85% 30%,rgba(52,211,153,.32),transparent 62%),linear-gradient(135deg,#0B1235 0%,#0F3D4A 55%,#0F766E 100%)}
+body.pg-404 .ph{background:radial-gradient(620px 340px at 80% 35%,rgba(167,139,250,.42),transparent 62%),linear-gradient(135deg,#1E1B4B 0%,#3B1E8F 55%,#6D28D9 100%)}
+.pg-art .big{font-family:Inter,system-ui,sans-serif;font-weight:900}
+
+/* maudhui */
+.pg-sec{margin-top:34px}
+.pg-sec>p{color:#334155;max-width:760px;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:-34px;position:relative;z-index:3}
+@media(min-width:720px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;text-align:center;box-shadow:0 10px 26px rgba(15,23,42,.08)}
+.stat b{display:block;font-size:1.6rem;color:#3730A3;letter-spacing:-.5px}
+.stat small{color:var(--mut);font-size:.8rem}
+.pils{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.pils{grid-template-columns:repeat(3,1fr)}}
+.pil{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.pil .pi{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;margin-bottom:10px}
+.pil .pi svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.pil b{display:block;font-size:1.02rem;margin-bottom:4px}
+.pil p{color:#475569;font-size:.9rem;margin:0}
+.cats.four{grid-template-columns:1fr 1fr}
+@media(min-width:720px){.cats.four{grid-template-columns:repeat(4,1fr)}}
+.cat small b{color:inherit}
+
+/* mawasiliano */
+.cgrid{display:grid;gap:16px;grid-template-columns:1fr;margin-top:-34px;position:relative;z-index:3}
+@media(min-width:820px){.cgrid{grid-template-columns:1.3fr 1fr}}
+.cform .fld input.t,.cform .fld select,.cform .fld textarea{width:100%;border:2px solid var(--line);border-radius:14px;background:#fff;padding:0 14px;font:inherit;font-size:1rem;font-weight:600;color:var(--ink)}
+.cform .fld input.t,.cform .fld select{height:52px}
+.cform .fld textarea{min-height:140px;padding:12px 14px;resize:vertical;line-height:1.5}
+.cform .fld input.t:focus,.cform .fld select:focus,.cform .fld textarea:focus{border-color:#0284C7;outline:0}
+.cform .btn-main{background:linear-gradient(90deg,#0284C7,#4F46E5)}
+.cstat{margin-top:12px;font-size:.88rem;border-radius:12px;padding:10px 14px;display:none}
+.cstat.on{display:block}
+.cstat.ok{background:#DCFCE7;color:#14532D;border:1px solid #BBF7D0}
+.cstat.err{background:#FEE2E2;color:#7F1D1D;border:1px solid #FECACA}
+.cinfo{display:grid;gap:12px;align-content:start}
+.cin{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;gap:12px}
+.cin .ci{flex:none;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#E0F2FE;color:#0369A1}
+.cin .ci svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cin b{display:block;margin-bottom:2px}
+.cin p{margin:0;color:#475569;font-size:.88rem}
+.cin a{color:#0369A1;font-weight:700}
+.cin a[data-mail]{word-break:break-all}
+
+/* faragha */
+.upd{display:inline-block;background:#D1FAE5;color:#065F46;font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px;margin-top:22px}
+.toc{display:grid;gap:6px;grid-template-columns:1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-top:14px}
+@media(min-width:720px){.toc{grid-template-columns:1fr 1fr}}
+.toc a{color:#0F766E;font-weight:600;font-size:.9rem}
+.toc a:hover{text-decoration:underline}
+.doc h2{font-size:1.15rem;margin:28px 0 8px;scroll-margin-top:80px}
+.doc h3{font-size:1rem;margin:16px 0 4px}
+.doc p,.doc li{color:#334155}
+.doc ul{margin:6px 0 10px 20px;list-style:disc}
+.doc li{margin:3px 0}
+.doc a{color:#0F766E;font-weight:600;text-decoration:underline}
+
+/* 404 */
+.nf-search{display:flex;gap:6px;background:#fff;padding:6px;border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.1);position:relative;max-width:560px}
+.nf-search input{flex:1;min-width:0;border:0;box-shadow:none;height:48px;background:transparent;border-radius:12px;padding:0 12px;font-size:1rem}
+.nf-search .results{top:calc(100% + 8px)}
+.nf-search .sbtn{background:#6D28D9}
+.nf-wrap{margin-top:-34px;position:relative;z-index:3}
+.pop{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+@media(min-width:720px){.pop{grid-template-columns:repeat(4,1fr)}}
+.pop a{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-weight:700;font-size:.88rem}
+.pop a:hover{border-color:#6D28D9;color:#6D28D9}
+.pop em{display:block;font-style:normal;color:var(--mut);font-size:.74rem;font-weight:600}
+.gohome{display:inline-block;margin-top:16px;background:linear-gradient(90deg,#2563EB,#7C3AED);color:#fff;font-weight:700;border-radius:12px;padding:12px 22px}
