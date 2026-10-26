@@ -1,7 +1,6 @@
 /* Jawabu TZ - Jamii: weka viungo vya vikundi hapa chini (mahali PEKEE panapohitaji kubadilishwa) */
 (function(){
-  var WHATSAPP_URL = ''; // <-- mfano: 'https://chat.whatsapp.com/XXXXXXXX' au kiungo cha channel
-  var TELEGRAM_URL = ''; // <-- mfano: 'https://t.me/jina_la_kundi'
+  var WHATSAPP_URL = 'https://whatsapp.com/channel/0029VbDZrfABKfi6R8nQYT2D';
 
   var $ = function(id){ return document.getElementById(id); };
   function setLink(id, url, label){
@@ -9,7 +8,6 @@
     a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = label; a.classList.remove('soon');
   }
   setLink('jWa', WHATSAPP_URL, 'Jiunge WhatsApp');
-  setLink('jTg', TELEGRAM_URL, 'Jiunge Telegram');
 
   var base = location.href.split(/[?#]/)[0].replace(/[^\/]*$/, '');
   var text = 'Jawabu TZ: vikokotoo vya bure vya PAYE, NSSF, HESLB, BMI, GPA, VAT na zaidi.';
