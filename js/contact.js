@@ -11,6 +11,10 @@
   });
 
   var form = $('cForm'); if(!form) return;
+  try { /* ?mada=pendekeza | hitilafu | maoni | ushirikiano */
+    var M = {maoni: 0, hitilafu: 1, pendekeza: 2, ushirikiano: 3}, m = new URLSearchParams(location.search).get('mada');
+    if(m && M[m] !== undefined) $('cSub').selectedIndex = M[m];
+  } catch(e){}
   var st = $('cStat');
   function say(msg, kind){ st.textContent = msg; st.className = 'cstat on ' + kind; }
 

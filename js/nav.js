@@ -5,7 +5,7 @@
     {t:'Pesa', i:'calc', sub:[['PAYE','pesa/paye.html'],['NSSF','pesa/nssf.html'],['HESLB','pesa/heslb.html'],['Mkopo','pesa/mkopo.html'],['Kodi ya TRA','pesa/kodi.html']]},
     {t:'Afya', i:'heart', sub:[['BMI','afya/bmi.html'],['Kalori','afya/kalori.html'],['Tarehe ya kujifungua','afya/kujifungua.html']]},
     {t:'Elimu', i:'cap', sub:[['GPA','elimu/gpa.html'],['Alama','elimu/alama.html'],['NECTA','elimu/necta.html']]},
-    {t:'Zaidi', i:'more', sub:[['Faida na Hasara','biashara/faida.html'],['VAT','biashara/vat.html'],['Bei ya Kuuza','biashara/bei-ya-kuuza.html'],['Kuhusu','about.html'],['Mawasiliano','contact.html']]}
+    {t:'Zaidi', i:'more', sub:[['Maswali','maswali.html'],['Miongozo','miongozo.html'],['Jamii','jamii.html'],['Faida na Hasara','biashara/faida.html'],['VAT','biashara/vat.html'],['Bei ya Kuuza','biashara/bei-ya-kuuza.html'],['Kuhusu','about.html'],['Mawasiliano','contact.html']]}
   ];
   var nav = document.getElementById('bottom-nav');
   if(!nav) return;
@@ -17,7 +17,8 @@
       var on = !inFolder && (location.pathname.slice(-1) === '/' || /index\.html$/.test(location.pathname));
       html += '<a class="nv'+(on?' on':'')+'" href="'+root+m.u+'"><i>'+ICON(m.i)+'</i>'+m.t+'</a>';
     } else {
-      var active = m.sub.some(function(s){return here === s[1];});
+      var file = location.pathname.split('/').pop();
+      var active = m.sub.some(function(s){return here === s[1] || (s[1].indexOf('/') < 0 && file === s[1]);});
       html += '<div class="nv'+(active?' on':'')+'"><button type="button" class="nvbtn" aria-expanded="false" style="display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;color:inherit;font-size:inherit;font-weight:inherit"><i>'+ICON(m.i)+'</i>'+m.t+'<span class="caret">▲</span></button><div class="drop">'+
         m.sub.map(function(s){return '<a href="'+root+s[1]+'">'+s[0]+'</a>';}).join('')+'</div></div>';
     }
